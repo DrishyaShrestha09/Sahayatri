@@ -7,7 +7,6 @@ import About_us from './pages/About_us';
 import Contact from './pages/Contact';
 import Register from './pages/Register';
 
-
 const App = () => {
   const router = createBrowserRouter([
     {

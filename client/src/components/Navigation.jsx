@@ -8,7 +8,7 @@ const Navigation = () => {
       <h1 className="text-2xl mt-2 font-bold">Sahayatri</h1>
       </div>
       <nav className=''>
-        <ul className="flex p-4 gap-4">
+        <ul className="flex p-4 gap-15">
           <li>
             <NavLink className={(e)=>{return e.isActive?"text-green-500" : ""}} to="/">
               Home
