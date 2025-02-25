@@ -1,16 +1,20 @@
-import './App.css'
+import './index.css'
+import Navigation from "./components/Navigation"
+import { createBrowserRouter } from 'react-router-dom'
+import Home from './pages/home'
 
-function App() {
-  
-
+const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home/>
+    },
+    {},
+  ])
   return (
-    <>
-      <div className='container '>
-        <div className="child bg-amber-400">
-        <h1 className='mt-10  flex justify-center font-bold text-amber-950 '>Hello world</h1>
-        </div>
-      </div>
-    </>
+    <div>
+      <Navigation/>
+    </div>
   )
 }
 
