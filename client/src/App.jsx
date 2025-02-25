@@ -1,4 +1,4 @@
-import './index.css' //check this import
+import './index.css'
 import Navigation from "./components/Navigation"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/home'

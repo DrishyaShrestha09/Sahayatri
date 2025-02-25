@@ -3,9 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <div>
-      <nav>
-        <ul className="flex gap-4">
+    <div className='flex'>
+      <div className="header">
+      <h1 className="text-2xl mt-2 font-bold">Sahayatri</h1>
+      </div>
+      <nav className=''>
+        <ul className="flex p-4 gap-4">
           <li>
             <NavLink className={(e)=>{return e.isActive?"text-green-500" : ""}} to="/">
               Home

@@ -1,3 +1,4 @@
+import '../index.css';
 const About_us = () => {
   return (
     <div>
