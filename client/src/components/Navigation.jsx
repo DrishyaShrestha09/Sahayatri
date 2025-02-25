@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <div className='flex'>
+    <div className=' px-20 mt-2 flex justify-between'>
       <div className="header">
       <h1 className="text-2xl mt-2 font-bold">Sahayatri</h1>
       </div>
