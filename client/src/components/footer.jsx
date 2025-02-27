@@ -28,12 +28,12 @@ const Footer = () => {
       </div>
       <div className="social">
         <h3 className="font-semibold text-lg m-2">Socials</h3>
-        <ul className="space-x-4">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter (X)</a></li>
-          <li><a href="#">LinedIn</a></li>
-        </ul>
+          <ul className="space-x-4">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter (X)</a></li>
+            <li><a href="#">LinedIn</a></li>
+          </ul>
       </div>
     </div>
   );
