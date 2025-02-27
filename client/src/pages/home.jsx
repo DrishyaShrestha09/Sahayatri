@@ -3,6 +3,9 @@ import childrens from "../assets/childrens.jpg";
 import aman from "../assets/aman.jpg";
 import { FaHeart } from "react-icons/fa";
 import { CiCalendar } from "react-icons/ci";
+import { GrFormNextLink } from "react-icons/gr";
+import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -313,6 +316,14 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="see p-2 mx-12 mb-10">
+      <Link to="/campaign" className="cursor-pointer">
+        <h1 className="flex text-xl">
+          See all fundraisers <GrFormNextLink size={30} />
+        </h1>
+      </Link>
+      </div>
+      <Footer />
     </div>
   );
 };
