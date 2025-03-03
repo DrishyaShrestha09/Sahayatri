@@ -10,6 +10,11 @@ const About_us = () => {
         <h1>Our Mission</h1>
         <p>Our mission is simple: to empower individuals and organizations by providing a seamless and trustworthy platform to raise funds. We believe in the power of community and collaboration to make dreams a reality.</p>
       </div>
+      <div>
+        <h1>Our Team</h1>
+        <p>Sahayatri is a community of like-minded individuals who come together to create a platform that empowers individuals and organizations to reach their dreams.</p>
+
+      </div>
       
     </div>
   )
