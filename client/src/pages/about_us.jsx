@@ -60,6 +60,17 @@ const About_us = () => {
         </p>
         <p>No Hidden Fees – We believe in fairness and transparency.</p>
       </div>
+      <div className="get-in-touch">
+        <h1>Get In Touch</h1>
+        <p>
+          We’re here to help! If you have any questions, need assistance, or
+          just want to share your experience, feel free to reach out. We'd love
+          to hear from you.
+        </p>
+        <p>Email: ridanstha09@gmail.com</p>
+        <p>Phone: +977 9804028236</p>
+        <p>Social Media: @sahayatri</p>
+      </div>
     </div>
   );
 };
