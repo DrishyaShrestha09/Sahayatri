@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import "../index.css";
 const About_us = () => {
   return (
@@ -71,6 +72,7 @@ const About_us = () => {
         <p>Phone: +977 9804028236</p>
         <p>Social Media: @sahayatri</p>
       </div>
+      <Footer/>
     </div>
   );
 };
