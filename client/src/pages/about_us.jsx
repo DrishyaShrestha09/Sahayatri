@@ -8,7 +8,26 @@ const About_us = () => {
       </div>
       <div className="mission">
         <h1>Our Mission</h1>
-        <p>Our mission is simple: to empower individuals and organizations by providing a seamless and trustworthy platform to raise funds. We believe in the power of community and collaboration to make dreams a reality.</p>
+        <p>Our mission is simple: to empower individuals and organizations by providing a seamless and trustworthy platform to raise funds. We believe in the power of community and collaboration to make dreams a reality. We strive to bridge the gap between ambition and opportunity, ensuring that financial constraints never hold back innovation, compassion, or progress.</p>
+      </div>
+      <div className="work">
+        <h1>
+          How it works
+        </h1>
+        <p>
+          We’ve made it easy for you to start, support, and succeed on Sahayatri:
+          <ul>
+            <li>
+            Create a Campaign – Share your story, set a funding goal, and start raising funds.
+            </li>
+            <li>
+            Receive Support – Reach donors who believe in your vision.
+            </li>
+            <li>
+            Make an Impact – Use the funds to bring your project or cause to life.
+            </li>
+          </ul>
+        </p>
       </div>
       <div>
         <h1>Our Team</h1>
