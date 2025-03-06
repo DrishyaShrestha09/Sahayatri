@@ -318,8 +318,8 @@ const Home = () => {
       </div>
       <div className="see p-2 mx-12 mb-10">
       <Link to="/campaign" className="inline-block cursor-pointer">
-        <h1 className="flex text-xl">
-          See all fundraisers <GrFormNextLink size={30} />
+        <h1 className="flex text-xl hover:underline">
+          See all fundraisers <GrFormNextLink  size={30} />
         </h1>
       </Link>
       </div>
