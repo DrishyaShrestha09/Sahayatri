@@ -317,7 +317,7 @@ const Home = () => {
         </div>
       </div>
       <div className="see p-2 mx-12 mb-10">
-      <Link to="/campaign" className="cursor-pointer">
+      <Link to="/campaign" className="inline-block cursor-pointer">
         <h1 className="flex text-xl">
           See all fundraisers <GrFormNextLink size={30} />
         </h1>
