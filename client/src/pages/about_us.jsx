@@ -1,10 +1,15 @@
 import Footer from "../components/Footer";
 import "../index.css";
 import { Link } from "react-router-dom";
+import bg from "../assets/bg.jpg";
+import peoples from "../assets/peoples.svg"
+
 const About_us = () => {
   return (
     <div className="main">
       <div className="into ">
+        <img src={bg} alt="img" />
+        <img src={peoples} alt="img" />
         <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
           Introduction to Sahayatri
         </h1>
@@ -33,21 +38,12 @@ const About_us = () => {
         <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
           How it works
         </h1>
-        <p className="text-gray-600 m-3 p-3">
-          We’ve made it easy for you to start, support, and succeed on
-          Sahayatri:
-          <ul>
-            <li>
-              Create a Campaign – Share your story, set a funding goal, and
-              start raising funds.
-            </li>
+        <p className="text-gray-600 mx-3 p-3"> We’ve made it easy for you to start, support, and succeed on Sahayatri :</p>
+          <ul className="text-gray-600 m-2 p-3 flex flex-col gap-6">
+            <li className=""> Create a Campaign – Share your story, set a funding goal, and start raising funds.</li>
             <li>Receive Support – Reach donors who believe in your vision.</li>
-            <li>
-              Make an Impact – Use the funds to bring your project or cause to
-              life.
-            </li>
+            <li> Make an Impact – Use the funds to bring your project or cause to life.</li>
           </ul>
-        </p>
       </div>
       <div className="choose">
         <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
