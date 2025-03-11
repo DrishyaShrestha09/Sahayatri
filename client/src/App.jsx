@@ -6,6 +6,7 @@ import Campaign from './pages/Campaign';
 import About_us from './pages/About_us';
 import Contact from './pages/Contact';
 import Register from './pages/Register';
+import Login from './pages/Login';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const App = () => {
     {
       path: "/register",
       element: <><Navigation/><Register/></>
+    },
+    {
+      path: "/login",
+      element: <><Navigation/><Login/></>
     },
   ])
   return (
