@@ -1,7 +1,6 @@
 import Footer from "../components/Footer";
 import "../index.css";
 import { Link } from "react-router-dom";
-import bg from "../assets/bg.jpg";
 import peoples from "../assets/peoples.svg"
 import mission from "../assets/mission.avif"
 
