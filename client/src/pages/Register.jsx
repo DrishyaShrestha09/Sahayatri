@@ -4,7 +4,6 @@ const Register = () => {
     <div>
      <div className="main">
        
-
      </div>
     </div>
   )
