@@ -3,13 +3,13 @@ import "../index.css";
 import { Link } from "react-router-dom";
 import bg from "../assets/bg.jpg";
 import peoples from "../assets/peoples.svg"
+import mission from "../assets/mission.avif"
 
 const About_us = () => {
   return (
     <div className="main">
       <div className="into ">
-        <img src={bg} alt="img" />
-        <img src={peoples} alt="img" />
+        <img src={peoples} alt="img"className="float-left w-100 h-50" />
         <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
           Introduction to Sahayatri
         </h1>
@@ -21,7 +21,8 @@ const About_us = () => {
           support.
         </p>
       </div>
-      <div className="mission">
+      <div className="mission mt-10">
+      <img src={mission} alt="img"className="float-right w-100 h-50 mx-10" />
         <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
           Our Mission
         </h1>
@@ -35,6 +36,7 @@ const About_us = () => {
         </p>
       </div>
       <div className="work">
+        
         <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
           How it works
         </h1>
