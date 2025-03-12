@@ -21,7 +21,7 @@ function Register  () {
           Create account
         </p>
         <p className="text-xs text-center mb-4">
-          Let's get started with your 30 days free trial
+          Let's fund a cause
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-4">
           <input
