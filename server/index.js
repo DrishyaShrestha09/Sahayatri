@@ -6,7 +6,18 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb+srv://ridanstha09:ridanstha09@sahayatridb.uwnj5.mongodb.net/")
+const port = process.env.PORT || 5000
+require('dotenv').config()
+
+
+async function main() {
+    await mongoose.connect(process.env.DB_URL)
+    app.get('/', (req, res) => {
+        res.send("Hola Amigo, Welcome to the server!");
+    })
+}
+
+main() .then(()=> console.log("Welcome to the server")).catch(err => console.log(err));
 
 app.post("/login", (req, res) =>{
     const {email, password} = req.body;
@@ -32,5 +43,5 @@ app.post('/register', (req, res) =>{
 })
 
 app.listen(3001, () =>{
-    console.log('Server is running on port 3001')
+    console.log(`Server is running on ${port}`);
 })

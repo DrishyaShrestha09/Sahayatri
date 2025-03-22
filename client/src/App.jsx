@@ -5,8 +5,8 @@ import Home from './pages/home';
 import Campaign from './pages/Campaign';
 import About_us from './pages/About_us';
 import Contact from './pages/Contact';
-import Register from './pages/Register';
-import Login from './pages/Login';
+import Register from './components/Register';
+import Login from './components/Login';
 
 const App = () => {
   return (
