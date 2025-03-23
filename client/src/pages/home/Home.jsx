@@ -1,16 +1,15 @@
 import '../../index.css';
-// import childrens from "../../assets/childrens.jpg";
-// import aman from "../../assets/aman.jpg";
-// import { FaHeart } from "react-icons/fa";
-// import { CiCalendar } from "react-icons/ci";
-// import { GrFormNextLink } from "react-icons/gr";
-// import { Link } from "react-router-dom";
+
 import Banner from './Banner';
+import Featured from './Featured';
+import Recommended from './Recommended';
 
 const Home = () => {
   return (
     <>
       <Banner/>
+      <Featured />
+      <Recommended />
     </>
   );
 };

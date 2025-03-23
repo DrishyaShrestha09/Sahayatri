@@ -3,7 +3,7 @@ import { LuSendHorizontal } from "react-icons/lu";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <div className="main bg-white p-10 m-5 mt-10 rounded-[20px] h-120 w-370">
+    <div className="main bg-white p-10 m-5 mt-10 rounded-[20px] h-120 w-415">
       <div className="header m-10">
         <h1 className="font-bold text-3xl">Sahayatri</h1>
         <p className="mt-5 text-xl">Give, Change, Inspire. </p>

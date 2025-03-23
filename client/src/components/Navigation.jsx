@@ -15,7 +15,7 @@ const Navigation = () => {
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
 
-  const currentUser = true;
+  const currentUser = false;
 
   // Close dropdown when clicked outside
   useEffect(() => {

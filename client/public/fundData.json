@@ -1,0 +1,103 @@
+[
+    {
+      "_id": 1,
+      "title": "Help Walt Fight Cancer",
+      "description": "Walt, a loving father of two, has been diagnosed with cancer. He needs urgent treatment to survive.",
+      "category": "medical",
+      "emergency": true,
+      "coverImage": "campaign-1.png",
+      "fundRequired": 50000,
+      "fundRaised": 12000
+    },
+    {
+      "_id": 2,
+      "title": "Empowering Girls Through Education",
+      "description": "Support a program that provides education and resources to underprivileged girls in rural areas.",
+      "category": "education",
+      "emergency": false,
+      "coverImage": "campaign-2.png",
+      "fundRequired": 30000,
+      "fundRaised": 8000
+    },
+    {
+      "_id": 3,
+      "title": "Food and Shelter for Homeless Families",
+      "description": "Thousands of families are homeless and need urgent assistance. Your contribution can make a difference.",
+      "category": "charity",
+      "emergency": true,
+      "coverImage": "campaign-3.png",
+      "fundRequired": 40000,
+      "fundRaised": 15000
+    },
+    {
+      "_id": 4,
+      "title": "Innovative Solar Energy Startup",
+      "description": "A new startup is developing affordable solar panels to bring electricity to remote areas.",
+      "category": "startups",
+      "emergency": false,
+      "coverImage": "campaign-4.png",
+      "fundRequired": 100000,
+      "fundRaised": 45000
+    },
+    {
+      "_id": 5,
+      "title": "Breakthrough in Alzheimer's Research",
+      "description": "Scientists are working on a groundbreaking treatment for Alzheimer's. Help fund this crucial research.",
+      "category": "research",
+      "emergency": false,
+      "coverImage": "campaign-5.png",
+      "fundRequired": 75000,
+      "fundRaised": 32000
+    },
+    {
+      "_id": 6,
+      "title": "Urgent Heart Surgery for Baby Mia",
+      "description": "Baby Mia needs immediate heart surgery to survive. Your donation can save her life.",
+      "category": "medical",
+      "emergency": true,
+      "coverImage": "campaign-6.png",
+      "fundRequired": 60000,
+      "fundRaised": 25000
+    },
+    {
+      "_id": 7,
+      "title": "Building Schools in Rural Areas",
+      "description": "Millions of children lack access to quality education. Help us build schools in underserved regions.",
+      "category": "education",
+      "emergency": false,
+      "coverImage": "campaign-7.png",
+      "fundRequired": 90000,
+      "fundRaised": 30000
+    },
+    {
+      "_id": 8,
+      "title": "Feeding Orphans in Crisis Zones",
+      "description": "Orphans in war-torn regions are starving. Every meal you provide can save a life.",
+      "category": "charity",
+      "emergency": true,
+      "coverImage": "campaign-8.png",
+      "fundRequired": 50000,
+      "fundRaised": 17000
+    },
+    {
+      "_id": 9,
+      "title": "AI-Powered Prosthetics Startup",
+      "description": "Help us develop advanced AI-powered prosthetics to improve mobility for amputees.",
+      "category": "startups",
+      "emergency": false,
+      "coverImage": "campaign-9.png",
+      "fundRequired": 120000,
+      "fundRaised": 60000
+    },
+    {
+      "_id": 10,
+      "title": "Revolutionary Cancer Research",
+      "description": "A promising new therapy for cancer treatment needs funding for clinical trials.",
+      "category": "research",
+      "emergency": false,
+      "coverImage": "campaign-10.png",
+      "fundRequired": 80000,
+      "fundRaised": 35000
+    }
+]
+  

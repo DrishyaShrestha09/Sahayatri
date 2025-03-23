@@ -9,3 +9,7 @@ body{
   background-color: #F5F5F5;
   font-family: 'Poppins';
 }
+
+.btn-primary {
+  @apply rounded-full px-6 py-3 text-lg font-medium text-white bg-[#4CAF50] hover:bg-[#388E3C] transition duration-300 shadow-md hover:shadow-lg
+}
