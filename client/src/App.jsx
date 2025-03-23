@@ -1,26 +1,15 @@
-import './index.css';
-import Navigation from "./components/Navigation";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
-import Campaign from './pages/Campaign';
-import About_us from './pages/About_us';
-import Contact from './pages/Contact';
-import Register from './components/Register';
-import Login from './components/Login';
+import { Outlet } from "react-router-dom";
+import Navigation from './components/Navigation';
 
 const App = () => {
   return (
-    <Router>
+    <>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/campaign" element={<Campaign />} />
-        <Route path="/about_us" element={<About_us />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+      <main className="min-h-screen max-w-screen-2xl mx-auto px-4 py-6">
+      <Outlet /> 
+      </main>
+      <footer>Footer</footer>
+    </>
   );
 };
 
