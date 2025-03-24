@@ -21,8 +21,14 @@ const campaignSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    fundRequired: Number,
-    fundRaised: Number,
+    fundRequired:{
+        type: Number,
+        required: true,
+    },
+    fundRaised: {
+        type: Number,
+        required: true,
+    },
     createdAt:{
         type: Date,
         default: Date.now,
