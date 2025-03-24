@@ -1,84 +1,47 @@
+import { useState } from "react"
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import { useForm } from "react-hook-form"
 
-function Register() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [successMessage, setSuccessMessage] = useState(""); 
+const Register = () => {
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:3001/register", { name, email, password })
-      .then((result) => {
-        console.log(result);
-        setSuccessMessage("Account registered successfully!"); 
-
-        // Clear input fields
-        setName("");
-        setEmail("");
-        setPassword("");
-      })
-      .catch((err) => {
-        console.log(err);
-        setSuccessMessage(""); 
-      });
-  };
+  const [message, setMessage] = useState("")
+    const {
+      register,
+      handleSubmit,
+      watch,
+      formState: { errors },
+    } = useForm()
 
   return (
-    <div className="flex justify-center align-middle mt-20">
-      <div className="w-[350px] h-[550px] bg-white shadow-lg rounded-lg p-6">
-        <p className="text-center text-2xl font-extrabold mb-4">
-          Create account
-        </p>
-        <p className="text-xs text-center mb-4">Let's fund a cause</p>
+    <div className="h-[calc(100vh-120px)] flex justify-center items-center">
+      <div className="w-full max-w-sm mx-auto bg-[#F5F5F5] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h2 className="text-xl font-semibold mb-4">Please Register</h2>
 
-        {successMessage && ( 
-          <p className="text-green-600 text-center font-bold mb-4">
-            {successMessage}
-          </p>
-        )}
-
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-4">
-          <input
-            type="text"
-            className="rounded-full border border-gray-400 outline-none p-3"
-            placeholder="Name"
-            value={name} // Controlled input
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="email"
-            className="rounded-full border border-gray-400 outline-none p-3"
-            placeholder="Email"
-            value={email} // Controlled input
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            className="rounded-full border border-gray-400 outline-none p-3"
-            placeholder="Password"
-            value={password} // Controlled input
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button className="p-3 rounded-full bg-teal-700 text-white font-bold shadow-md hover:shadow-none">
-            Create account
-          </button>
+        <form onSubmit={handleSubmit(onsubmit)}>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
+            <input 
+            {...register("email", { required: true })}
+            type="email" name="email" id="email" placeholder="Email Address" className="shadow appearance-none border border-gray-200 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow"/>
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+            <input 
+            {...register("password", { required: true })}
+            type="password" name="password" id="password" placeholder="Password" className="shadow appearance-none border border-gray-200 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow"/>
+          </div>
+          <div >
+            {
+              message && <p className="text-red-500 text-xs italic mb-3">{message}</p>
+            }
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none">Register</button>
+          </div>
         </form>
-
-        <Link to="/login">
-          <p className="text-xs text-gray-500 text-center">
-            Already have an account?{" "}
-            <span className="text-teal-700 font-extrabold underline cursor-pointer">
-              Log in
-            </span>
-          </p>
-        </Link>
+        <p className="align-baseline font-medium mt-4 text-sm">Already have an account? <Link to="/login" className="text-blue-500 hover:text-blue-700 hover:underline">Login</Link></p>
+        <p className="mt-5 text-center text-gray-500 text-sm">@2025 Sahayatri. All rights reserved</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default Register;
+export default Register

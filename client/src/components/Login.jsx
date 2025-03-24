@@ -1,59 +1,48 @@
-import { Link, useNavigate } from "react-router-dom";
-
 import { useState } from "react"
-import axios from "axios";
-function Login () {
-    const navigate = useNavigate()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form"
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3001/login', {email, password})
-        .then(result => {
-            console.log(result)
-            if(result.data === "Login Successful") {
-                navigate('/')
+const Login = () => {
+  const [message, setMessage] = useState("")
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data) => console.log(data)
+
+   return (
+    <div className="h-[calc(100vh-120px)] flex justify-center items-center">
+      <div className="w-full max-w-sm mx-auto bg-[#F5F5F5] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h2 className="text-xl font-semibold mb-4">Please login</h2>
+
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
+            <input 
+            {...register("email", { required: true })}
+            type="email" name="email" id="email" placeholder="Email Address" className="shadow appearance-none border border-gray-200 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow"/>
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password</label>
+            <input 
+            {...register("password", { required: true })}
+            type="password" name="password" id="password" placeholder="Password" className="shadow appearance-none border border-gray-200 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow"/>
+          </div>
+          <div >
+            {
+              message && <p className="text-red-500 text-xs italic mb-3">{message}</p>
             }
-        })
-        .catch(err => console.log(err))
-    }
-
-  return (
-    <div className="flex justify-center align-middle mt-20 ">
-      <div className="w-[350px] h-[500px] bg-white shadow-lg rounded-lg p-6 ">
-        <p className="text-center text-2xl font-extrabold mb-6">Welcome back</p>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-4">
-          <input
-            type="email"
-            className="rounded-full border border-gray-400 outline-none p-3"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            className="rounded-full border border-gray-400 outline-none p-3"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <p className="text-right text-gray-500 underline text-xs font-bold cursor-pointer hover:text-black">
-            Forgot Password?
-          </p>
-          <button type="submit" className="p-3 rounded-full bg-teal-700 text-white font-bold shadow-md hover:shadow-none">
-            Log in
-          </button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none">Login</button>
+          </div>
         </form>
-        <Link to="/register">
-          <p className="text-xs text-gray-500 text-center">
-            Don't have an account?{" "}
-            <span className="text-teal-700 font-extrabold underline cursor-pointer">
-              Sign up
-            </span>
-          </p>
-        </Link>
+        <p className="align-baseline font-medium mt-4 text-sm">Don&apos;t have an account? Feel free to <Link to="/register" className="text-blue-500 hover:text-blue-700 hover:underline"> Register</Link></p>
+        <p className="mt-5 text-center text-gray-500 text-sm">@2025 Sahayatri. All rights reserved</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

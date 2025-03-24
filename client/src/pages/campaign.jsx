@@ -2,7 +2,6 @@ import "../index.css";
 import aman from "../assets/aman.jpg";
 import { FaHeart } from "react-icons/fa";
 import { CiCalendar } from "react-icons/ci";
-import Footer from "../components/Footer";
 
 const Campaign = () => {
   return (
@@ -445,7 +444,6 @@ const Campaign = () => {
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   );
 };

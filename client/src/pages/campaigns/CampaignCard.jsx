@@ -6,6 +6,7 @@ import { getImgUrl } from '../../utils/getImgurl';
 import { Link } from 'react-router-dom';
 
 
+
 const CampaignCard = ({fund}) => {
   return (
     <div className="flex flex-wrap py-8 justify-center">
@@ -50,9 +51,11 @@ const CampaignCard = ({fund}) => {
 
               {/* Donate Button */}
               <div className="donateButton flex mt-5">
-                <button className="btn-primary">
-                  Fund a Cause
-                </button>
+                <Link to={`/donate/${fund?._id}`}>
+                  <button className="btn-primary">
+                    Fund a Cause
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

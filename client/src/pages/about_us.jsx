@@ -1,4 +1,3 @@
-import Footer from "../components/Footer";
 import "../index.css";
 import { Link } from "react-router-dom";
 import peoples from "../assets/peoples.svg"
@@ -13,8 +12,8 @@ const About_us = () => {
           Introduction to Sahayatri
         </h1>
         <p className="text-gray-600 m-3 p-3">
-          Sahayatri is more than just a crowdfunding platform it's a movement
-          that connects dreamers with believers. Whether it's for social causes,
+          Sahayatri is more than just a crowdfunding platform it&apos;s a movement
+          that connects dreamers with believers. Whether it&apos;s for social causes,
           business ventures, or personal projects, we provide a transparent and
           secure space where ideas come to life through the power of collective
           support.
@@ -73,7 +72,7 @@ const About_us = () => {
         </h1>
         <p className="text-gray-600 m-3 p-3">
           We’re here to help! If you have any questions, need assistance, or
-          just want to share your experience, feel free to reach out. We'd love
+          just want to share your experience, feel free to reach out. We&apos;d love
           to hear from you.
         </p>
         <p className="text-gray-600 m-3 p-3">Email: ridanstha09@gmail.com</p>
@@ -87,8 +86,6 @@ const About_us = () => {
           </p>
         </Link>
       </div>
-
-      <Footer />
     </div>
   );
 };

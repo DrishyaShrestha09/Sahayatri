@@ -1,5 +1,4 @@
 import "../index.css";
-import Footer from "../components/Footer";
 import contact from "../assets/contact.svg";
 
 const Contact = () => {
@@ -43,8 +42,6 @@ const Contact = () => {
         </div>
 
       </div>
-
-      <Footer />
     </div>
   );
 };
