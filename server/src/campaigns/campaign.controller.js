@@ -17,13 +17,48 @@ const getAllCampaigns = async (req, res) => {
         const campaigns = await Campaign.find().sort({ createdAt: 1});
         res.status(200).send(campaigns);
     } catch (error) {
-        console.error("Error while fetching campaign")
-        res.status(500).send({message: "Failed to fetch a campaign"});
+        console.error("Error while fetching campaigns")
+        res.status(500).send({message: "Failed to fetch campaigns"});
+    }
+}
+
+// this function is used to get a single campaign by ID
+const getSingleCampaign = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const campaign = await Campaign.findById(id);
+        if(!campaign) {
+            res.status(404).send({message: "Campaign not found!"});
+        }
+        res.status(200).send(campaign);
+    }   catch (error) {
+          console.error("Error while fetching a campaign")
+          res.status(500).send({message: "Failed to fetch a campaign"});
+    }
+}
+
+// this function is used to update a campaign by ID
+const updateCampaignData = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const updatedCampaign = await Campaign.findByIdAndUpdate(id, req.body, {new: true});
+        if(!updatedCampaign) {
+            res.status(404).send({message: "Campaign not found!"});
+        }
+        res.status(200).send({
+            message: "Campaign updated successfully",
+            campaign: updatedCampaign
+        });
+    } catch (error) {
+        console.error("Failed to update campaigns", error);
+          res.status(500).send({message: "Failed update campaign"});
     }
 }
 
 // we export this by default on obj format because we will store all the logics on the routes
 module.exports = {
     postACampaign,
-    getAllCampaigns
+    getAllCampaigns,
+    getSingleCampaign,
+    updateCampaignData
 }
