@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 const DonatePage = () => {
   const { id } = useParams(); 
   const navigate = useNavigate(); 
+//   const currentUser = true; // TODO: use get user from auth
   
   const [formData, setFormData] = useState({
     name: "",
