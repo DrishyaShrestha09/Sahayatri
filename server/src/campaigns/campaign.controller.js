@@ -11,7 +11,19 @@ const postACampaign = async (req, res) => {
     } 
 }
 
+// this function is used to get all campaigns
+const getAllCampaigns = async (req, res) => {
+    try {
+        const campaigns = await Campaign.find().sort({ createdAt: 1});
+        res.status(200).send(campaigns);
+    } catch (error) {
+        console.error("Error while fetching campaign")
+        res.status(500).send({message: "Failed to fetch a campaign"});
+    }
+}
+
 // we export this by default on obj format because we will store all the logics on the routes
 module.exports = {
-    postACampaign
+    postACampaign,
+    getAllCampaigns
 }
