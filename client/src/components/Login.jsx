@@ -2,6 +2,8 @@ import { useState } from "react"
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
 
+import { FaGoogle } from "react-icons/fa";
+
 const Login = () => {
   const [message, setMessage] = useState("")
   const {
@@ -12,6 +14,9 @@ const Login = () => {
   } = useForm()
 
   const onSubmit = (data) => console.log(data)
+  const handleGoogleSignIn = () =>{
+
+  }
 
    return (
     <div className="h-[calc(100vh-120px)] flex justify-center items-center">
@@ -35,10 +40,21 @@ const Login = () => {
             {
               message && <p className="text-red-500 text-xs italic mb-3">{message}</p>
             }
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none">Login</button>
+            <button className="btn-secondary">Login</button>
           </div>
         </form>
         <p className="align-baseline font-medium mt-4 text-sm">Don&apos;t have an account? Feel free to <Link to="/register" className="text-blue-500 hover:text-blue-700 hover:underline"> Register</Link></p>
+
+        {/* Google auth */}
+        <div className="mt-4 ">
+          <button
+          onCLick={handleGoogleSignIn}
+          className="w-full flex flex-wrap gap-1 items-center justify-center bg-[#0D0842] hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded focus:outline-none">
+            <FaGoogle className='mr-2'/>
+              Sign in with Google
+          </button>
+        </div>
+        
         <p className="mt-5 text-center text-gray-500 text-sm">@2025 Sahayatri. All rights reserved</p>
       </div>
     </div>
