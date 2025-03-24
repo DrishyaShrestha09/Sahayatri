@@ -14,7 +14,7 @@ const postACampaign = async (req, res) => {
 // this function is used to get all campaigns
 const getAllCampaigns = async (req, res) => {
     try {
-        const campaigns = await Campaign.find().sort({ createdAt: 1});
+        const campaigns = await Campaign.find().sort({ createdAt: -1});
         res.status(200).send(campaigns);
     } catch (error) {
         console.error("Error while fetching campaigns")
@@ -51,7 +51,25 @@ const updateCampaignData = async (req, res) => {
         });
     } catch (error) {
         console.error("Failed to update campaigns", error);
-          res.status(500).send({message: "Failed update campaign"});
+          res.status(500).send({message: "Failed update a campaign"});
+    }
+}
+
+// this function is used to delete a campaign by ID
+const deleteACampaign = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const deletedCampaign = await Campaign.findByIdAndDelete(id);
+        if(!deletedCampaign) {
+            return res.status(404).send({ message: "Book not found" });
+        }
+        res.status(200).send({
+            message: "Campaign deleted successfully",
+            campaign: deletedCampaign
+        });
+    } catch (error) {
+        console.error("Error while deleting a campaigns", error);
+        res.status(500).send({message: "Failed to delete a campaign"});
     }
 }
 
@@ -60,5 +78,6 @@ module.exports = {
     postACampaign,
     getAllCampaigns,
     getSingleCampaign,
-    updateCampaignData
+    updateCampaignData,
+    deleteACampaign
 }
