@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import banner from "../../assets/childrens.jpg";
 
 // yedi user registered xaina ra user le make a difference btn ma click garo vane login page ma lagxa if logged in xa vane aauta alert msz dekhauxa for now.
-
 const Banner = ({ isAuthenticated }) => {  
   const navigate = useNavigate();
 

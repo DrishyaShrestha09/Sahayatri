@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { HiOutlineUser } from "react-icons/hi";
 import manImg from "../assets/man.png";
 import { useState, useEffect, useRef } from 'react';
+import { useAuth } from './../context/AuthContext';
+
 
 const navigation = [
-  { name: "Dashboard", href: "/dashboard" },
   { name: "Campaign", href: "/campaign" }
 ];
 
@@ -15,7 +16,11 @@ const Navigation = () => {
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
 
-  const currentUser = false;
+  const {currentUser, logout} = useAuth()
+
+  const handleLogout = () => {
+    logout()
+  }
 
   // Close dropdown when clicked outside
   useEffect(() => {
@@ -91,6 +96,11 @@ const Navigation = () => {
                               </li>
                             ))
                           }
+                          <li>
+                            <button 
+                            onClick={handleLogout}
+                            className='block w-full text-left px-4 py-2 text-sm hover:bg-gray-100'>Logout</button>
+                          </li>
                         </ul>
                       </div>
                     )}
