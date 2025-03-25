@@ -11,10 +11,10 @@ router.post("/admin", async (req, res) => {
     try {
         const admin = await User.findOne({username});
         if(!admin) {
-            res.status(404).send({message: "Admin not found"})
+          return res.status(404).send({message: "Admin not found"})
         }
         if(admin.password !== password) {
-            res.status(401).send({message: "Invalid Credentials!"}) 
+            return res.status(401).send({message: "Invalid Credentials!"}) 
         }
 
         // this is the first value of jwt.sign after first value we will define user info then the 2nd value will be JWT_SECRET and the 3rd value will be expires in 1h
