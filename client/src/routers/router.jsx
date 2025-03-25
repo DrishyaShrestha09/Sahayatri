@@ -13,6 +13,9 @@ import AdminRoute from "./AdminRoute";
 import AdminLogin from "../components/AdminLogin";
 import DashboardLayout from "../pages/dashboard/DashboardLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
+import ManageCampaigns from "../pages/dashboard/manageCampaign/ManageCampaigns";
+import AddCampaign from "../pages/dashboard/addCampaign/AddCampaign";
+import UpdateCampaing from "../pages/dashboard/editCampaign/UpdateCampaing";
 
 const router = createBrowserRouter([
     {
@@ -70,15 +73,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "add-new-campaign",
-                element: <AdminRoute><h1>Add new campaign</h1></AdminRoute>,
+                element: <AdminRoute><AddCampaign></AddCampaign></AdminRoute>,
             },
             {
                 path: "edit-campaign/:id",
-                element: <AdminRoute><h1>Edit campaign</h1></AdminRoute>,
+                element: <AdminRoute><UpdateCampaing/></AdminRoute>,
             },
             {
                 path: "manage-campaigns",
-                element: <AdminRoute><h1>manages campaigns</h1></AdminRoute>
+                element: <AdminRoute><ManageCampaigns/></AdminRoute>
             },
 
         ]
