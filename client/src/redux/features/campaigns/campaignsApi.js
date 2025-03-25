@@ -13,7 +13,7 @@ const baseQuery = fetchBaseQuery({
     }
 
 })
-
+// maile RTK Query use garera state management ra API haru call gareko kina ki hami le frontend ma API sita kasari interact garne aani state haru lai kasari manage garne vanera dekhaunu parxa
 const campaignsApi = createApi({
     reducerPath:  'campaignsApi',
     baseQuery,
