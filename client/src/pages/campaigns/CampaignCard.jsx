@@ -7,25 +7,25 @@ import { Link } from 'react-router-dom';
 
 
 
-const CampaignCard = ({fund}) => {
+const CampaignCard = ({campaign}) => {
   return (
     <div className="flex flex-wrap py-8 justify-center">
         {/* Card 1 */}
         <div className="cardCampaign flex w-[30%] m-4">
           <div className="rounded-2xl overflow-hidden shadow-xl bg-white">
-            <Link to={`/funds/${fund?._id}`}>
+            <Link to={`/campaigns/${campaign?._id}`}>
             <img
-              src={`${getImgUrl(fund?.coverImage)}`}
+              src={`${getImgUrl(campaign?.coverImage)}`}
               alt="image"
               className="h-[300px] w-full object-cover"
               />
               </Link>
             <div className="p-6 text-lg">
-              <Link to={`/funds/${fund?._id}`}> <h3 className='font-semi-bold text-xl mb-4 text-gray-900 hover:text-blue-600'>
-                {fund?.title}
+              <Link to={`/campaigns/${campaign?._id}`}> <h3 className='font-semi-bold text-xl mb-4 text-gray-900 hover:text-blue-600'>
+                {campaign?.title}
                 </h3></Link>
               <p className="text-gray-700 leading-snug">
-                {fund?.description.length > 80 ? `${fund?.description.slice(0, 80)}...` : fund?.description}
+                {campaign?.description.length > 80 ? `${campaign?.description.slice(0, 80)}...` : campaign?.description}
               </p>
 
               {/* Progress Bar */}
@@ -35,8 +35,8 @@ const CampaignCard = ({fund}) => {
 
               {/* Amount Collected */}
               <div className="amt_collected flex items-center gap-2 mt-4">
-                <h1 className="text-2xl font-bold text-gray-900">Rs. {fund?.fundRaised}</h1>
-                <p className="text-base text-gray-600">Raised of Rs. {fund?.fundRequired}</p>
+                <h1 className="text-2xl font-bold text-gray-900">Rs. {campaign?.fundRaised}</h1>
+                <p className="text-base text-gray-600">Raised of Rs. {campaign?.fundRequired}</p>
               </div>
 
               {/* Supporters Count */}
@@ -51,7 +51,7 @@ const CampaignCard = ({fund}) => {
 
               {/* Donate Button */}
               <div className="donateButton flex mt-5">
-                <Link to={`/donate/${fund?._id}`}>
+                <Link to={`/donate/${campaign?._id}`}>
                   <button className="btn-primary">
                     Fund a Cause
                   </button>

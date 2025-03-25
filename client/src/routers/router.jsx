@@ -7,6 +7,7 @@ import Register from './../components/Register';
 import Contact from './../pages/Contact';
 import About_us from './../pages/About_us';
 import DonatePage from "../pages/campaigns/DonatePage";
+import SingleCampaign from "../pages/campaigns/SingleCampaign";
 
 const router = createBrowserRouter([
     {
@@ -42,8 +43,8 @@ const router = createBrowserRouter([
                 element: <DonatePage />,
             },
             {
-                path: 'campaigns/:id',
-                element: <h1>Single campaign page based on camp id</h1>
+                path: '/campaigns/:id',
+                element: <SingleCampaign />
             },
 
         ]

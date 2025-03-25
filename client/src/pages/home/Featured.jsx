@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CampaignCard from "../campaigns/CampaignCard";
 
 // Import Swiper React components
@@ -11,7 +11,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
-
+import { useFetchAllCampaignsQuery } from "../../redux/features/campaigns/campaignsApi";
 
 // creating an array for dropdown selection
 const categories = [
@@ -23,21 +23,17 @@ const categories = [
   "Research",
 ];
 
-const Featured = ({ fund }) => {
-  const [fundData, setFundData] = useState([]);
+const Featured = () => {
   const [selectedCategory, setSelectedCategory] = useState("Fundraising for");
 
-  useEffect(() => {
-    fetch("fundData.json")
-      .then((res) => res.json())
-      .then((data) => setFundData(data));
-  }, []);
+  const { data: campaigns = [] } = useFetchAllCampaignsQuery();
 
+  // Use campaigns instead of fundData
   const filteredData =
     selectedCategory === "Fundraising for"
-      ? fundData
-      : fundData.filter(
-          (funds) => funds.category === selectedCategory.toLowerCase()
+      ? campaigns
+      : campaigns.filter(
+          (campaign) => campaign.category === selectedCategory.toLowerCase()
         );
 
   return (
@@ -93,9 +89,9 @@ const Featured = ({ fund }) => {
       >
         {/* Displaying filtered data */}
         {filteredData.length > 0 &&
-          filteredData.map((fund, index) => (
+          filteredData.map((campaign, index) => (
             <SwiperSlide key={index}>
-              <CampaignCard fund={fund} />
+              <CampaignCard campaign={campaign} />
             </SwiperSlide>
           ))}
       </Swiper>

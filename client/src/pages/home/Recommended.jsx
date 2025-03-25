@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {  Pagination } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import CampaignCard from "../campaigns/CampaignCard";
@@ -13,15 +12,11 @@ import { Navigation } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/navigation';
+import { useFetchAllCampaignsQuery } from "../../redux/features/campaigns/campaignsApi";
 
 const Recommended = () => {
 
-    const [fundData, setFundData] = useState([]);
-      useEffect(() => {
-        fetch("fundData.json")
-          .then((res) => res.json())
-          .then((data) => setFundData(data));
-      }, []);
+  const { data: campaigns = [] } = useFetchAllCampaignsQuery();
     
   return (
     <div className="py-16">
@@ -56,9 +51,9 @@ const Recommended = () => {
       >
         {/* Displaying filtered data */}
         {
-        fundData.length > 0 && fundData.slice(5, 10).map((fund, index) => (
+        campaigns.length > 0 && campaigns.slice(5, 10).map((campaign, index) => (
             <SwiperSlide key={index}>
-              <CampaignCard fund={fund} />
+              <CampaignCard campaign={campaign} />
             </SwiperSlide>
           ))}
       </Swiper>
