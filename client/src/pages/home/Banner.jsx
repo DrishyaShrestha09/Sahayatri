@@ -2,16 +2,16 @@ import { useNavigate } from "react-router-dom";
 import banner from "../../assets/childrens.jpg";
 
 // yedi user registered xaina ra user le make a difference btn ma click garo vane login page ma lagxa if logged in xa vane aauta alert msz dekhauxa for now.
-const Banner = ({ isAuthenticated }) => {  
-  const navigate = useNavigate();
+const Banner = () => {  
+  // const navigate = useNavigate();
 
-  const handleMakeDifference = () => {
-    if (isAuthenticated) {
-      alert("You are already making a difference!");
-    } else {
-      navigate("/login");
-    }
-  };
+  // const handleMakeDifference = () => {
+  //   if (isAuthenticated) {
+  //     alert("You are already making a difference!");
+  //   } else {
+  //     navigate("/login");
+  //   }
+  // };
 
   return (
     <div className="flex flex-col md:flex-row-reverse py-16 justify-between items-center gap-12">
@@ -33,7 +33,9 @@ const Banner = ({ isAuthenticated }) => {
           lasting change.
         </p>
 
-        <button onClick={handleMakeDifference} className="btn-primary">
+        <button 
+        // onClick={handleMakeDifference} 
+        className="btn-primary">
           Make a Difference
         </button>
       </div>

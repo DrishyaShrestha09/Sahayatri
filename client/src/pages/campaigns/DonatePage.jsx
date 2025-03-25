@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 const DonatePage = () => {
   const { id } = useParams(); 
   const navigate = useNavigate(); 
-//   const currentUser = true; // TODO: use get user from auth
+  const { currentUser } = useAuth();
   
   const [formData, setFormData] = useState({
     name: "",

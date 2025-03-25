@@ -8,6 +8,7 @@ import Contact from './../pages/Contact';
 import About_us from './../pages/About_us';
 import DonatePage from "../pages/campaigns/DonatePage";
 import SingleCampaign from "../pages/campaigns/SingleCampaign";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/donate/:id',
-                element: <DonatePage />,
+                element: <PrivateRoute><DonatePage /></PrivateRoute>,
             },
             {
                 path: '/campaigns/:id',
