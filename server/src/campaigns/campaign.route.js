@@ -1,10 +1,11 @@
 const express = require('express');
 const Campaign = require('./campaign.model');
 const { postACampaign, getAllCampaigns, getSingleCampaign, updateCampaignData, deleteACampaign } = require('./campaign.controller');
+const verifyAdminToken = require('../middleware/verifyAdminToken');
 const router = express.Router();
 
-// posting a book
-router.post("/create-campaign", postACampaign)
+// posting a book and giving access to admin only for creating campaign using verifyAdminToken
+router.post("/create-campaign", verifyAdminToken, postACampaign)
 
 // get all campaign
 router.get("/", getAllCampaigns)
@@ -12,10 +13,10 @@ router.get("/", getAllCampaigns)
 // single book endpoint
 router.get("/:id", getSingleCampaign)
 
-// uodate book endpoint
-router.put("/edit/:id", updateCampaignData)
+// update book endpoint and giving access to admin only for updating campaign
+router.put("/edit/:id", verifyAdminToken, updateCampaignData)
 
-// delete book endpoint
-router.delete("/:id", deleteACampaign )
+// delete book endpoint and giving access to admin only for deleting a campaign
+router.delete("/:id", verifyAdminToken, deleteACampaign )
 
 module.exports = router;

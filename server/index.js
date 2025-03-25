@@ -16,7 +16,10 @@ app.use(cors({
 
 // Defining Routes
 const campaignRoutes = require('./src/campaigns/campaign.route')
+const getUserRoutes = require("./src/users/user.route")
+
 app.use("/api/campaigns", campaignRoutes)
+app.use("/api/auth", getUserRoutes)
 
 async function main() {
     await mongoose.connect(process.env.DB_URL);
