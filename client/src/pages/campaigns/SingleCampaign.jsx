@@ -1,4 +1,3 @@
-// import aman from "../../assets/aman.jpg";
 import { CiCalendar } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { getImgUrl } from "../../utils/getImgurl";
@@ -9,8 +8,8 @@ const SingleCampaign = () => {
   const { id } = useParams();
   const { data: campaign, isLoading, isError } = useFetchCampaignByIDQuery(id);
 
-  if(isLoading) return <div>Loading...</div>
-  if(isError) return <div>Error while fetching campaign data</div>
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error while fetching campaign data</div>;
   return (
     <div className="flex flex-col md:flex-row py-8 md:py-16 justify-between items-start gap-8 md:gap-12">
       {/* left */}
@@ -31,32 +30,47 @@ const SingleCampaign = () => {
           {campaign?.description}
         </p>
 
-        {/* progress bar */}
-        <div className="progress-bar bg-gray-300 h-3 rounded-full mt-8">
-          <div className="bg-[#34C759] w-[70%] h-full rounded-full"></div>
+        {/* Progress Bar */}
+        <div className="progress-bar bg-gray-300 h-3 rounded-full mt-5">
+          <div
+            className="bg-[#34C759] h-full rounded-full"
+            style={{
+              width: `${
+                campaign?.fundRequired > 0
+                  ? (campaign?.fundRaised / campaign?.fundRequired) * 100
+                  : 0
+              }%`,
+            }}
+          ></div>
         </div>
+
         {/* Amount Collected */}
         <div className="amt_collected flex items-center gap-2 mt-4">
           <h1 className="text-2xl font-bold text-gray-900">
             Rs. {campaign?.fundRaised}
           </h1>
           <p className="text-base text-gray-600">
-            Raised of Rs. {campaign?.fundRequired}{" "}
+            Raised of Rs. {campaign?.fundRequired}
           </p>
         </div>
 
         {/* Supporters Count */}
-        <div className="supporterCount mt-5 flex gap-2 items-center font-semibold text-gray-800">
-          <FaHeart className="text-red-500 text-xl" /> 200 Supporters
+        <div className="supporterCount mt-3 flex gap-2 items-center font-semibold text-gray-800">
+          <FaHeart className="text-red-500 text-xl" />{" "}
+          {campaign?.supportersCount || 0} Supporters
         </div>
 
         {/* Time Remaining */}
-        <div className="time mt-5 flex items-center text-base gap-2 text-gray-800">
-          <CiCalendar className="text-xl text-gray-600" /> 10 Days Left
+        <div className="time mt-2 flex items-center text-base gap-2 text-gray-800">
+          <CiCalendar className="text-xl text-gray-600" />
+          Created on:{" "}
+          {campaign?.createdAt
+            ? new Date(campaign?.createdAt).toLocaleDateString()
+            : "N/A"}
         </div>
 
         {/* Donate Button */}
-        <div className="donateButton flex mt-7">
+        <div className="donateButton flex mt-5">
           <Link to={`/donate/${campaign?._id}`}>
             <button className="btn-primary">Fund a Cause</button>
           </Link>
