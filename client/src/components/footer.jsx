@@ -29,11 +29,11 @@ const Footer = () => {
                 Home
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/campaign" className="hover:underline">
                 Campaign
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/about_us" className="hover:underline">
                 About Us

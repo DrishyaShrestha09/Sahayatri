@@ -8,7 +8,7 @@ import { useAuth } from './../context/AuthContext';
 
 
 const navigation = [
-  { name: "Campaign", href: "/campaign" }
+  { name: "Contact", href: "/contact" }
 ];
 
 const Navigation = () => {
@@ -57,11 +57,11 @@ const Navigation = () => {
                 Home
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink className={({ isActive }) => (isActive ? "text-green-500" : "")} to="/campaign">
                 Campaign
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink className={({ isActive }) => (isActive ? "text-green-500" : "")} to="/about_us">
                 About Us

@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
 
 const DonatePage = () => {
   const { id } = useParams(); 
   const navigate = useNavigate(); 
-  const { currentUser } = useAuth();
   
   const [formData, setFormData] = useState({
     name: "",
@@ -23,14 +21,35 @@ const DonatePage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    alert(`Thank you ${formData.name} for saving a cause. We’ll reach out to you soon for payment information.`);
+  const handleSubmit = async (e) => {
 
-    navigate("/");
-    
-    console.log("Form Data Submitted:", formData);
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:5000/api/update-donation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          campaignId: formData.campaignId,
+          donationAmount: formData.donationAmount,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json(); 
+  
+      alert(`Thank you ${formData.name} for saving a cause. We’ll reach out to you soon for payment information.`);
+  
+      navigate("/");
+      console.log("Donation Successful:", data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (

@@ -2,37 +2,39 @@ import "../index.css";
 import { Link } from "react-router-dom";
 import peoples from "../assets/peoples.svg"
 import mission from "../assets/mission.avif"
+import banner from "../assets/banner1.jpg";
 
 const About_us = () => {
   return (
     <div className="main">
-      <div className="into ">
-        <img src={peoples} alt="img"className="float-left w-100 h-50" />
-        <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
-          Introduction to Sahayatri
-        </h1>
-        <p className="text-gray-600 m-3 p-3">
-          Sahayatri is more than just a crowdfunding platform it&apos;s a movement
-          that connects dreamers with believers. Whether it&apos;s for social causes,
-          business ventures, or personal projects, we provide a transparent and
-          secure space where ideas come to life through the power of collective
-          support.
-        </p>
-      </div>
-      <div className="mission mt-10">
-      <img src={mission} alt="img"className="float-right w-100 h-50 mx-10" />
-        <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
-          Our Mission
-        </h1>
-        <p className="text-gray-600 m-3 p-3">
-          Our mission is simple: to empower individuals and organizations by
-          providing a seamless and trustworthy platform to raise funds. We
-          believe in the power of community and collaboration to make dreams a
-          reality. We strive to bridge the gap between ambition and opportunity,
-          ensuring that financial constraints never hold back innovation,
-          compassion, or progress.
-        </p>
-      </div>
+      <div className="flex flex-col md:flex-row-reverse py-16 justify-between items-center gap-12">
+            <div className="images md:w-1/2 w-full flex items-center md:justify-end">
+              <img src={banner} alt="" className="rounded-[40px]" />
+            </div>
+      
+            <div className="texts md:w-1/2 w-full">
+              <h1 className="md:text-5xl text-2xl font-medium mb-7">
+                Welcome to Sahayatri!
+              </h1>
+              <p className="mb-10 text-2xl">
+                Together we <span className="text-[#008080]">make Dreams Happen</span>
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row py-16 justify-between items-center gap-12">
+            <div className="images md:w-1/2 w-full flex items-center md:justify-end">
+              <img src={banner} alt="" className="rounded-[40px]" />
+            </div>
+      
+            <div className="texts md:w-1/2 w-full">
+              <h1 className="md:text-5xl text-2xl font-medium mb-7">
+                Welcome to Sahayatri!
+              </h1>
+              <p className="mb-10 text-2xl">
+                Together we <span className="text-[#008080]">make Dreams Happen</span>
+              </p>
+            </div>
+          </div>
       <div className="work">
         
         <h1 className="m-3 p-3 flex text-black font-bold text-2xl">
