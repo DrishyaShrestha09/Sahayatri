@@ -62,8 +62,8 @@ const Featured = () => {
           clickable: true,
         }}
         autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
+          delay: 3500,
+          disableOnInteraction: true,
         }}
         navigation={true}
         breakpoints={{
