@@ -3,40 +3,44 @@ import InputField from "./InputField";
 import SelectField from "./SelectField";
 import { useForm } from "react-hook-form";
 import { useAddCampaignMutation } from "../../../redux/features/campaigns/campaignsApi";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const AddCampaign = () => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const [imageFile, setimageFile] = useState(null);
-  const [imageFileName, setimageFileName] = useState('');
+  const [imageFileName, setimageFileName] = useState("");
   const [addCampaign, { isLoading, isError }] = useAddCampaignMutation();
 
   const onSubmit = async (data) => {
-
     const newCampaignData = {
-        ...data,
-        coverImage: imageFileName,
-    }
+      ...data,
+      coverImage: imageFileName,
+    };
     try {
-        await addCampaign(newCampaignData).unwrap();
-        Swal.fire({
-            title: "Created campaign",
-            text: "Campaign created successfully",
-            icon: "success",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Okay!"
-          });
-          reset();
-          setimageFileName('');
-          setimageFile(null);
+      await addCampaign(newCampaignData).unwrap();
+      Swal.fire({
+        title: "Created campaign",
+        text: "Campaign created successfully",
+        icon: "success",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Okay!",
+      });
+      reset();
+      setimageFileName("");
+      setimageFile(null);
     } catch (error) {
-        console.error(error);
-        alert("failed to add campaign. Please try again")
+      console.error(error);
+      alert("failed to add campaign. Please try again");
     }
   };
-  
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -45,10 +49,11 @@ const AddCampaign = () => {
     }
   };
 
-
   return (
     <div className="max-w-lg   mx-auto md:p-6 p-3 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">Add a New Campaign</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-4">
+        Add a New Campaign
+      </h2>
       {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Title Input */}
@@ -73,12 +78,12 @@ const AddCampaign = () => {
           label="Category"
           name="category"
           options={[
-            { value: '', label: 'Fundraising for' },
-            { value: 'medical', label: 'Medical' },
-            { value: 'education', label: 'Education' },
-            { value: 'charity', label: 'Charity' },
-            { value: 'startups', label: 'Startups' },
-            { value: 'research', label: 'Research' },
+            { value: "", label: "Fundraising for" },
+            { value: "medical", label: "Medical" },
+            { value: "education", label: "Education" },
+            { value: "charity", label: "Charity" },
+            { value: "startups", label: "Startups" },
+            { value: "research", label: "Research" },
           ]}
           register={register}
         />
@@ -88,10 +93,12 @@ const AddCampaign = () => {
           <label className="inline-flex items-center">
             <input
               type="checkbox"
-              {...register('emergency')}
+              {...register("emergency")}
               className="rounded text-blue-600 focus:ring focus:ring-offset-2 focus:ring-blue-500"
             />
-            <span className="ml-2 text-sm font-semibold text-gray-700">Emergency</span>
+            <span className="ml-2 text-sm font-semibold text-gray-700">
+              Emergency
+            </span>
           </label>
         </div>
 
@@ -115,14 +122,20 @@ const AddCampaign = () => {
 
         {/* Cover Image Upload */}
         <div className="mb-4">
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Cover Image</label>
+          <label className="block text-sm font-semibold text-gray-700 mb-2">
+            Cover Image
+          </label>
           <input
             type="file"
             accept="image/*"
-            onChange={handleFileChange} 
-            className="mb-2 w-full"
+            onChange={handleFileChange}
+            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold 
+            file:bg-blue-50 file:text-blue-700
+           hover:file:bg-blue-100"
           />
-          {imageFileName && <p className="text-sm text-gray-500">Selected: {imageFileName}</p>}
+          {imageFileName && (
+            <p className="text-sm text-gray-500">Selected: {imageFileName}</p>
+          )}
         </div>
 
         {/* Submit Button */}
