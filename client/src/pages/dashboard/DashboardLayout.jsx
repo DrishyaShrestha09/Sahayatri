@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import { MdOutlineManageHistory } from "react-icons/md";
 
 const DashboardLayout = () => {
-const handleLogout = () => {};
+  const handleLogout = () => {};
 
   return (
     <section className="flex md:bg-gray-100 min-h-screen overflow-hidden">
@@ -38,7 +38,7 @@ const handleLogout = () => {};
             </a> */}
             <Link
               to="/dashboard"
-              className="inline-flex items-center justify-center py-3 text-purple-600 bg-white rounded-lg"
+              className="inline-flex items-center justify-center py-3  focus:text-[#008080] focus:bg-white rounded-lg "
               title="Dashboard"
             >
               <span className="sr-only">Dashboard</span>
@@ -57,9 +57,10 @@ const handleLogout = () => {};
                 />
               </svg>
             </Link>
+
             <Link
               to="/dashboard/add-new-campaign"
-              className="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg"
+              className="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-[#008080] focus:bg-white rounded-lg"
               title="Add new campaign"
             >
               <span className="sr-only">Add Campaign</span>
@@ -67,15 +68,18 @@ const handleLogout = () => {};
             </Link>
             <Link
               to="/dashboard/manage-campaigns"
-              className="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg"
-              title="Manage campaigns"  
+              className="inline-flex items-center justify-center py-3 hover:text-gray-400 hover:bg-gray-700 focus:text-[#008080] focus:bg-white  rounded-lg"
+              title="Manage campaigns"
             >
               <span className="sr-only">Documents</span>
               <MdOutlineManageHistory className="h-6 w-6" />
             </Link>
           </nav>
           <div className="inline-flex items-center justify-center h-20 w-20 border-t border-gray-700">
-            <button className="p-3 hover:text-gray-400 hover:bg-gray-700 focus:text-gray-400 focus:bg-gray-700 rounded-lg">
+            <button
+              title="Setting"
+              className="p-3 hover:text-gray-400 hover:bg-gray-700 focus:text-[#008080] focus:bg-white rounded-lg"
+            >
               <span className="sr-only">Settings</span>
               <svg
                 aria-hidden="true"
@@ -214,7 +218,7 @@ const handleLogout = () => {};
           <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
             <div className="mr-6">
               <Link to="/dashboard">
-              <h1 className="text-4xl font-semibold mb-2">Dashboard</h1>
+                <h1 className="text-4xl font-semibold mb-2">Dashboard</h1>
               </Link>
               <h2 className="text-gray-600 ml-0.5">
                 Manage campaign and donations
