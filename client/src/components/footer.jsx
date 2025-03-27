@@ -23,7 +23,7 @@ const Footer = () => {
 
             {/* Donate Button */}
             <Link
-              to="/donate"
+              to="/"
               className="bg-[#008080] hover:bg-[#006666] transition-colors duration-300 text-white flex items-center gap-2 w-fit px-6 py-3 rounded-full cursor-pointer"
             >
               <span>Donate Now</span>

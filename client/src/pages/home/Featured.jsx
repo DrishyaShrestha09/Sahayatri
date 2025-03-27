@@ -38,14 +38,15 @@ const Featured = () => {
 
   return (
     <div className="py-10">
-      <h2 className="text-3xl font-semibold mb-6">Featured Campaigns</h2>
+      <h2 className="text-3xl font-semibold mb-6">Together We <span className="text-[#008080] font-semibold">Make Dreams Happen</span> </h2>
+      <h2 className="text-3xl font-semibold mt-10">Featured Campaigns</h2>
       {/* category filtering */}
       <div className="mb-8 flex items-center">
         <select
           onChange={(e) => setSelectedCategory(e.target.value)}
           name="category"
           id="category"
-          className="border bg-[#EAEAEA] border-gray-300 rounded-md px-4 py-2 focus:outline-none mt-2"
+          className="border bg-[#EAEAEA] border-gray-300 rounded-md px-4 py-2 focus:outline-none mt-5"
         >
           {categories.map((category, index) => (
             <option key={index} value={category}>
