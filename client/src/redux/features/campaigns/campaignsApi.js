@@ -21,6 +21,10 @@ const campaignsApi = createApi({
     endpoints: (builder) => ({ 
         fetchAllCampaigns: builder.query({
             query: () => "/", //naya campaign banexai campaign haru yo api ma aayera basxa
+            transformResponse: (response) => ({
+                campaigns: response.campaigns,
+                totalFundRaised: response.totalFundRaised
+            }),
             providesTags: ["Campaigns"]
         }),
         fetchCampaignByID: builder.query({  // get request ma method describe garnu pardaina tara aaru req ma parxa
