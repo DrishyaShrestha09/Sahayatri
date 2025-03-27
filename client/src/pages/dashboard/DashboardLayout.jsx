@@ -3,8 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import { MdOutlineManageHistory } from "react-icons/md";
 
 const DashboardLayout = () => {
-
-  const handleLogout = () => {};
+const handleLogout = () => {};
 
   return (
     <section className="flex md:bg-gray-100 min-h-screen overflow-hidden">

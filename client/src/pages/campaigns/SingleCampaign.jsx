@@ -31,18 +31,18 @@ const SingleCampaign = () => {
         </p>
 
         {/* Progress Bar */}
-        <div className="progress-bar bg-gray-300 h-3 rounded-full mt-5">
-          <div
-            className="bg-[#34C759] h-full rounded-full"
-            style={{
-              width: `${
-                campaign?.fundRequired > 0
-                  ? (campaign?.fundRaised / campaign?.fundRequired) * 100
-                  : 0
-              }%`,
-            }}
-          ></div>
-        </div>
+        <div className="progress-bar bg-gray-300 h-3 rounded-full mt-5 ">
+              <div
+                className="bg-[#34C759] h-full rounded-full"
+                style={{
+                  width: `${
+                    campaign?.fundRequired > 0
+                      ? Math.min ((campaign?.fundRaised / campaign?.fundRequired) * 100, 100 ) // math.min le width lai 100% vanda mathi jana didaina
+                      : 0
+                  }%`,
+                }}
+              ></div>
+            </div>
 
         {/* Amount Collected */}
         <div className="amt_collected flex items-center gap-2 mt-4">

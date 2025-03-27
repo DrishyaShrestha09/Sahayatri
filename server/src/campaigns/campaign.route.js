@@ -4,19 +4,19 @@ const { postACampaign, getAllCampaigns, getSingleCampaign, updateCampaignData, d
 const verifyAdminToken = require('../middleware/verifyAdminToken');
 const router = express.Router();
 
-// posting a book and giving access to admin only for creating campaign using verifyAdminToken
+// posting a campaign and giving access to admin only for creating campaign using verifyAdminToken
 router.post("/create-campaign", verifyAdminToken, postACampaign)
 
 // get all campaign
 router.get("/", getAllCampaigns)
 
-// single book endpoint
+// single campaign endpoint
 router.get("/:id", getSingleCampaign)
 
-// update book endpoint and giving access to admin only for updating campaign
+// update campaign endpoint and giving access to admin only for updating campaign
 router.put("/edit/:id", verifyAdminToken, updateCampaignData)
 
-// delete book endpoint and giving access to admin only for deleting a campaign
+// delete campaign endpoint and giving access to admin only for deleting a campaign
 router.delete("/:id", verifyAdminToken, deleteACampaign )
 
 module.exports = router;

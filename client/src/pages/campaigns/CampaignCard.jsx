@@ -32,13 +32,13 @@ const CampaignCard = ({ campaign }) => {
             </p>
 
             {/* Progress Bar */}
-            <div className="progress-bar bg-gray-300 h-3 rounded-full mt-5">
+            <div className="progress-bar bg-gray-300 h-3 rounded-full mt-5 ">
               <div
                 className="bg-[#34C759] h-full rounded-full"
                 style={{
                   width: `${
                     campaign?.fundRequired > 0
-                      ? (campaign?.fundRaised / campaign?.fundRequired) * 100
+                      ? Math.min ((campaign?.fundRaised / campaign?.fundRequired) * 100, 100 ) // math.min le width lai 100% vanda mathi jana didaina
                       : 0
                   }%`,
                 }}
