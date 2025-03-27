@@ -144,8 +144,7 @@ const About_us = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link 
               onClick={handleMakeDifference}
-               
-              className="bg-white text-[#008080] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+              className="bg-white text-[#008080] px-8 py-3 rounded-lg font-semibold hover:bg-[#008080] hover:text-white hover:border transition-colors duration-300"
             >
               Login to make a Difference  
             </Link>
