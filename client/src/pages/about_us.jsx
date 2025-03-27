@@ -1,11 +1,26 @@
 import "../index.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import peoples from "../assets/peoples.svg";
 import mission from "../assets/mission.avif";
 import banner from "../assets/banner1.jpg";
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from "../context/AuthContext";
+
 
 const About_us = () => {
+
+  const navigate = useNavigate();
+  const {currentUser, loading}  = useAuth();
+
+  const handleMakeDifference = () => {
+    if (loading) return;
+    if (currentUser) {
+      alert("🎉 Thank you for being part of the change! You are already making a difference. Keep supporting and inspiring others!");
+    } else {
+      alert("🔒 Please log in to start making a difference. Join us in creating a better future! ✨");
+      navigate("/login");
+    }
+  }
+
   return (
     <div className="main bg-gray-50">
       {/* Hero Section */}
@@ -128,13 +143,14 @@ const About_us = () => {
           <p className="text-xl mb-8">Join thousands of others who are transforming lives through Sahayatri</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link 
-              to="/register" 
+              onClick={handleMakeDifference}
+               
               className="bg-white text-[#008080] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
             >
               Login to make a Difference  
             </Link>
             <Link 
-              to="/campaigns" 
+              to="/" 
               className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#008080] transition-colors duration-300"
             >
               Browse Campaigns
@@ -148,8 +164,8 @@ const About_us = () => {
         <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
           <p className="text-lg text-gray-600 mb-8">
-            We're here to help! If you have any questions, need assistance, or
-            just want to share your experience, feel free to reach out. We'd
+            We&apos;re here to help! If you have any questions, need assistance, or
+            just want to share your experience, feel free to reach out. We&apos;d
             love to hear from you.
           </p>
           
