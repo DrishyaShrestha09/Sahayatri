@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import peoples from "../assets/peoples.svg";
 import mission from "../assets/mission.avif";
 import banner from "../assets/banner1.jpg";
+import { useAuth } from '../../context/AuthContext';
 
 const About_us = () => {
   return (
