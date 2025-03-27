@@ -1,70 +1,167 @@
-import "../index.css";
-import { LuSendHorizontal } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import { LuSendHorizontal } from "react-icons/lu";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin,
+  FaHeart,
+} from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <div className="main bg-white p-10 m-5 mt-10 rounded-[20px] h-120 w-415">
-      <div className="header m-10">
-        <h1 className="font-bold text-3xl">Sahayatri</h1>
-        <p className="mt-5 text-xl">Give, Change, Inspire. </p>
-      </div>
-      {/* Creating button*/}
-      <div className="btn bg-[#008080] m-5 flex gap-4 h-10 w-60 justify-center p-2 rounded-[20px] cursor-pointer hover:bg-[#006666]">
-        <h1 className="text-white ">Donate Now</h1>
-        <div className="icon bg-[#A8E067] rounded-[20px] ">
-          <LuSendHorizontal className="m-1 " />
+    <footer className="bg-white w-full">
+      <div className="max-w-[90rem] mx-auto px-6 py-12">
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row justify-between gap-16 mb-16">
+          {/* Brand Info */}
+          <div className="flex flex-col md:flex-col justify-start gap-6">
+            <h1 className="font-bold text-3xl text-gray-900">Sahayatri</h1>
+            <p className="text-xl text-gray-600">
+              Give, Change, Inspire. Together we make dreams happen.
+            </p>
+
+            {/* Donate Button */}
+            <Link
+              to="/donate"
+              className="bg-[#008080] hover:bg-[#006666] transition-colors duration-300 text-white flex items-center gap-2 w-fit px-6 py-3 rounded-full cursor-pointer"
+            >
+              <span>Donate Now</span>
+              <div className="bg-[#A8E067] rounded-full p-1">
+                <LuSendHorizontal className="text-black" />
+              </div>
+            </Link>
+          </div>
+
+          {/* Links Sections */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-16">
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-semibold text-lg text-gray-900 mb-6">
+                Quick Links
+              </h3>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    to="/"
+                    className="text-gray-600 hover:text-[#008080] hover:underline transition-colors duration-200"
+                  >
+                    Home
+                  </Link>
+                </li>
+                
+                <li>
+                  <Link
+                    to="/about_us"
+                    className="text-gray-600 hover:text-[#008080] hover:underline transition-colors duration-200"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="text-gray-600 hover:text-[#008080] hover:underline transition-colors duration-200"
+                  >
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h3 className="font-semibold text-lg text-gray-900 mb-6">
+                Connect With Us
+              </h3>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 text-gray-600 hover:text-[#008080] transition-colors duration-200"
+                  >
+                    <FaFacebook /> Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 text-gray-600 hover:text-[#008080] transition-colors duration-200"
+                  >
+                    <FaInstagram /> Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 text-gray-600 hover:text-[#008080] transition-colors duration-200"
+                  >
+                    <FaTwitter /> Twitter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 text-gray-600 hover:text-[#008080] transition-colors duration-200"
+                  >
+                    <FaLinkedin /> LinkedIn
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <h3 className="font-semibold text-lg text-gray-900 mb-6">
+                Stay Updated
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Subscribe to our newsletter for the latest campaigns and
+                updates.
+              </p>
+              <div className="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#008080] w-full"
+                />
+                <button className="bg-[#008080] text-white px-4 py-2 rounded-r-lg hover:bg-[#006666] transition-colors duration-300">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-gray-600 text-center md:text-left">
+            &copy; {new Date().getFullYear()} Sahayatri. All rights reserved.
+          </p>
+
+          <div className="flex items-center gap-1 text-gray-600">
+            <span>Made with</span>
+            <FaHeart className="text-red-500" />
+            <span>in Nepal</span>
+          </div>
+
+          <div className="flex gap-6">
+            <a
+              href="#"
+              className="text-gray-600 hover:text-[#008080] transition-colors duration-200"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="text-gray-600 hover:text-[#008080] transition-colors duration-200"
+            >
+              Terms of Service
+            </a>
+          </div>
         </div>
       </div>
-      {/* Creating copy-right*/}
-      <div className="rights text-left  text-black text-xl px-4 py-2 mt-15">
-        <p>&copy; 2025 Sahayatri. All rights reserved.</p>
-      </div>
-      {/* Creating main container for quick links*/}
-      <div className="manage justify-end w-full flex flex-wrap gap-40 -mx-10">
-        <div className="quick-links -my-65 ">
-          <h3 className="font-semibold text-lg mb-2 ">Quick Links</h3>
-          <ul className="space-y-5 mt-5">
-            <li>
-              <Link to="/" className="hover:underline">
-                Home
-              </Link>
-            </li>
-            {/* <li>
-              <Link to="/campaign" className="hover:underline">
-                Campaign
-              </Link>
-            </li> */}
-            <li>
-              <Link to="/about_us" className="hover:underline">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:underline">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="social -my-65 px-10">
-          <h3 className="font-semibold text-lg mb-2">Socials</h3>
-          <ul className="space-y-5 mt-5">
-            <li>
-              <a href="#">Facebook</a>
-            </li>
-            <li>
-              <a href="#">Instagram</a>
-            </li>
-            <li>
-              <a href="#">Twitter (X)</a>
-            </li>
-            <li>
-              <a href="#">LinkedIn</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    </footer>
   );
 };
 
