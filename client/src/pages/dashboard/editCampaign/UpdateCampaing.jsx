@@ -88,7 +88,7 @@ const UpdateCampaign = () => {
                             {...register('emergency')}
                             className="rounded text-blue-600 focus:ring focus:ring-offset-2 focus:ring-blue-500"
                         />
-                        <span className="ml-2 text-sm font-semibold text-gray-700">Trending</span>
+                        <span className="ml-2 text-sm font-semibold text-gray-700">Emergency</span>
                     </label>
                 </div>
 
