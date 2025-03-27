@@ -1,6 +1,6 @@
 const express = require('express');
 const Campaign = require('./campaign.model');
-const { postACampaign, getAllCampaigns, getSingleCampaign, updateCampaignData, deleteACampaign } = require('./campaign.controller');
+const { postACampaign, getAllCampaigns, getSingleCampaign, updateCampaignData, deleteACampaign, getEmergencyCampaigns } = require('./campaign.controller');
 const verifyAdminToken = require('../middleware/verifyAdminToken');
 const router = express.Router();
 
@@ -9,6 +9,9 @@ router.post("/create-campaign", verifyAdminToken, postACampaign)
 
 // get all campaign
 router.get("/", getAllCampaigns)
+
+// get emergency campaigns
+router.get('/emergency', getEmergencyCampaigns)
 
 // single campaign endpoint
 router.get("/:id", getSingleCampaign)
