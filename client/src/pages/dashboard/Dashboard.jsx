@@ -5,21 +5,20 @@ import Loading from "./../../components/Loading";
 import { useNavigate } from "react-router-dom";
 import { MdIncompleteCircle } from "react-icons/md";
 import RevenueChart from "./RevenueChart";
-import { useFetchEmergencyCampaignsQuery } from "../../redux/features/campaigns/campaignsApi"
+import { useFetchAllCampaignsQuery } from "../../redux/features/campaigns/campaignsApi";
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
+  const navigate = useNavigate(); // ✅ Use lowercase for the variable
+  const { data: revenueData, isLoading } = useFetchAllCampaignsQuery();
 
-  const { data: emergencyCampaigns, isLoading: isEmergencyLoading } = useFetchEmergencyCampaignsQuery();
-
-  const Navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${getBaseUrl()}/api/admin`, {
           headers: {
-            Authoriation: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${localStorage.getItem("token")}`, // ✅ Fixed typo
             "Content-Type": "application/json",
           },
         });
@@ -33,9 +32,8 @@ const Dashboard = () => {
 
     fetchData();
   }, []);
-  console.log(data);
 
-  if (loading || isEmergencyLoading) return <Loading />;
+  if (isLoading || loading) return <Loading />; 
 
   return (
     <>
@@ -58,9 +56,7 @@ const Dashboard = () => {
             </svg>
           </div>
           <div>
-            <span className="block text-2xl font-bold">
-              {data?.totalCampaign}
-            </span>
+            <span className="block text-2xl font-bold">{data?.totalCampaign}</span>
             <span className="block text-gray-500">Campaigns</span>
           </div>
         </div>
@@ -83,7 +79,7 @@ const Dashboard = () => {
           </div>
           <div>
             <span className="block text-2xl font-bold">
-            {/* ${totalFundsRaised || 0} */}
+              ${revenueData?.totalFundRaised?.toLocaleString() ?? 0}
             </span>
             <span className="block text-gray-500">Total Funds Raised</span>
           </div>
@@ -130,11 +126,9 @@ const Dashboard = () => {
             The number of fund raised per month
           </div>
           <div className="p-4 flex-grow">
-            <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">
-              <RevenueChart />
-            </div>
+            <RevenueChart />
           </div>
-        </div> 
+        </div>
       </section>
     </>
   );
