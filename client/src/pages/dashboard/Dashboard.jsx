@@ -4,7 +4,6 @@ import axios from "axios";
 import Loading from "./../../components/Loading";
 import { useNavigate } from "react-router-dom";
 import { MdIncompleteCircle } from "react-icons/md";
-import FundChart from "./FundChart";
 import RevenueChart from "./RevenueChart";
 
 const Dashboard = () => {
