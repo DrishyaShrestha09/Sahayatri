@@ -23,6 +23,10 @@ const campaignsApi = createApi({
             query: () => "/", //naya campaign banexai campaign haru yo api ma aayera basxa
             providesTags: ["Campaigns"]
         }),
+        fetchEmergencyCampaigns: builder.query({ // emergency campaigns
+            query: () => "/emergency",
+            providesTags: ["Campaigns"],
+        }),
         fetchCampaignByID: builder.query({  // get request ma method describe garnu pardaina tara aaru req ma parxa
             query: (id) => `/${id}`,
             providesTags: (results, error, id) => [{type:  "Campaign", id}],
@@ -56,6 +60,5 @@ const campaignsApi = createApi({
     })
 })
 
-export const {useFetchAllCampaignsQuery, useFetchCampaignByIDQuery, useAddCampaignMutation, useUpdateCampaignMutation,
-useDeleteCampaignMutation } = campaignsApi
-export default campaignsApi;    
+export const {useFetchAllCampaignsQuery, useFetchEmergencyCampaignsQuery ,useFetchCampaignByIDQuery, useAddCampaignMutation, useUpdateCampaignMutation, useDeleteCampaignMutation } = campaignsApi
+export default campaignsApi;

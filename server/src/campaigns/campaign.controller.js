@@ -73,11 +73,23 @@ const deleteACampaign = async (req, res) => {
     }
 }
 
+// to get emergency campaign info
+const getEmergencyCampaigns = async (req, res) => {
+  try {
+      const emergencyCampaigns = await Campaign.find({ emergency: true }).sort({ createdAt: -1 });
+      res.status(200).send(emergencyCampaigns);
+  } catch (error) {
+      console.error("Error while fetching emergency campaigns", error);
+      res.status(500).send({ message: "Failed to fetch emergency campaigns" });
+  }
+}
+
 // we export this by default on obj format because we will store all the logics on the routes
 module.exports = {
     postACampaign,
     getAllCampaigns,
     getSingleCampaign,
     updateCampaignData,
-    deleteACampaign
+    deleteACampaign,
+    getEmergencyCampaigns
 }
