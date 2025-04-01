@@ -209,7 +209,7 @@ const About_us = () => {
           <div className="mt-12">
             <Link 
               to="/Contact" 
-              className="inline-block bg-[#008080] text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-300"
+              className="inline-block bg-[#008080] text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#008080] hover:border hover:border-[#008080]  transition-colors duration-300"
             >
               Contact Us
             </Link>
