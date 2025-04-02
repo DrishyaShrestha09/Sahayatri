@@ -61,7 +61,7 @@ const deleteACampaign = async (req, res) => {
         const {id} = req.params;
         const deletedCampaign = await Campaign.findByIdAndDelete(id);
         if(!deletedCampaign) {
-            return res.status(404).send({ message: "Book not found" });
+            return res.status(404).send({ message: "Campaign not found" });
         }
         res.status(200).send({
             message: "Campaign deleted successfully",

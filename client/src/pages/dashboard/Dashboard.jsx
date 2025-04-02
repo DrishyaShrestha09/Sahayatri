@@ -83,7 +83,7 @@ const Dashboard = () => {
           </div>
           <div>
             <span className="block text-2xl font-bold">
-            {/* ${totalFundsRaised || 0} */}
+            {/* {data?.totalFundRaised} */} 155,088
             </span>
             <span className="block text-gray-500">Total Funds Raised</span>
           </div>
