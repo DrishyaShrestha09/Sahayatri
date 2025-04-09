@@ -16,6 +16,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import ManageCampaigns from "../pages/dashboard/manageCampaign/ManageCampaigns";
 import AddCampaign from "../pages/dashboard/addCampaign/AddCampaign";
 import UpdateCampaing from "../pages/dashboard/editCampaign/UpdateCampaing";
+import Campaign from "../pages/Campaign";
 
 const router = createBrowserRouter([
     {
@@ -26,10 +27,10 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home/>,
             },
-            // {
-            //     path: '/campaign',
-            //     element: <div>Campaign Page</div>,
-            // },
+            {
+                path: '/campaign',
+                element: <Campaign/>,
+            },
             {
                 path: '/about_us',
                 element: <About_us/>,

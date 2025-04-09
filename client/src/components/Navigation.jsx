@@ -57,11 +57,11 @@ const Navigation = () => {
                 Home
               </NavLink>
             </li>
-            {/* <li>
-              <NavLink className={({ isActive }) => (isActive ? "text-green-500" : "")} to="/campaign"> Removed this for now as campaign card is not well resopnsive
+            <li>
+              <NavLink className={({ isActive }) => (isActive ? "text-green-500" : "")} to="/campaign">
                 Campaign
               </NavLink>
-            </li> */}
+            </li>
             <li>
               <NavLink className={({ isActive }) => (isActive ? "text-green-500" : "")} to="/about_us">
                 About Us
