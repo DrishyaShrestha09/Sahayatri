@@ -17,6 +17,7 @@ import ManageCampaigns from "../pages/dashboard/manageCampaign/ManageCampaigns";
 import AddCampaign from "../pages/dashboard/addCampaign/AddCampaign";
 import UpdateCampaing from "../pages/dashboard/editCampaign/UpdateCampaing";
 import Campaign from "../pages/Campaign";
+import PaymentSuccess from "../pages/campaigns/PaymentSuccess";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path: '/donate/:id',
                 element: <PrivateRoute><DonatePage /></PrivateRoute>,
+            },
+            {
+                path: '/payment-success',
+                element: <PrivateRoute><PaymentSuccess /></PrivateRoute>,
             },
             {
                 path: '/campaigns/:id',
